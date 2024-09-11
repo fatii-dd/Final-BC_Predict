@@ -3,7 +3,7 @@ services:
     name: Final_BC_Predict-backend
     env: python
     buildCommand: ""
-    startCommand: uvicorn backend.main:app --host 127.0.0.1 --port 8000
+    startCommand: uvicorn back.main:app --host 127.0.0.1 --port 8000
     plan: free
     envVars:
       - key: PYTHON_VERSION
