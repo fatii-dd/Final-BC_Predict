@@ -5,11 +5,11 @@ import joblib
 import pandas as pd
 
 # Load model and scaler
-model = joblib.load('rf_model.joblib')
-scaler = joblib.load('scaler.joblib')
+model = joblib.load('models/rf_model.joblib')
+scaler = joblib.load('models/scaler.joblib')
 
 # Load columns used in training
-columns_to_use = joblib.load('columns_to_use.joblib')
+columns_to_use = joblib.load('models/columns_to_use.joblib')
 
 app = FastAPI()
 
