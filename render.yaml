@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: Final_BC_Predict-backend
+    env: python
+    buildCommand: ""
+    startCommand: uvicorn backend.main:app --host 127.0.0.1 --port 8000
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9
+    healthCheckPath: /
+    autoDeploy: true
+
+  - type: web
+    name: Final_BC_Predict-frontend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    staticPublishPath: frontend/build
+    plan: free
+    autoDeploy: true
