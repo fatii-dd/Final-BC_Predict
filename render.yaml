@@ -16,6 +16,6 @@ services:
     env: node
     buildCommand: ""
     startCommand: npm start
-    staticPublishPath: frontend/build
+    staticPublishPath: /
     plan: free
     autoDeploy: true
