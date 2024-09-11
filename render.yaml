@@ -14,7 +14,7 @@ services:
   - type: web
     name: Final_BC_Predict-frontend
     env: node
-    buildCommand: npm install && npm run build
+    buildCommand: ""
     startCommand: npm start
     staticPublishPath: frontend/build
     plan: free
