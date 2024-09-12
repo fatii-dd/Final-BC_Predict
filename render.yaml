@@ -4,8 +4,6 @@ services:
     env: python
     buildCommand: "pip install -r back/requirements.txt"
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-    ports:
-      - port: 10000
     plan: free
     envVars:
       - key: PYTHON_VERSION
@@ -16,9 +14,8 @@ services:
   - type: web
     name: Final_BC_Predict-frontend
     env: node
-    buildCommand: npm install && npm run build    # คำสั่งสำหรับติดตั้ง dependencies และ build
-    startCommand: "npm start"                 # คำสั่งสำหรับรันแอปหลังจาก build เสร็จ
-    plan: free
+    buildCommand: npm install && npm run build    
+    startCommand: "npx serve -s build"             
     envVars:
       - key: NODE_VERSION
         value: 16.14.0
