@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: Final_BC_Predict-backend
+    env: python
+    buildCommand: ""
+    startCommand: uvicorn back.main:app --host 127.0.0.1 --port 8000
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9
+    healthCheckPath: /
+    autoDeploy: true
+
+  - type: web
+    name: Final_BC_Predict-frontend
+    env: node
+    buildCommand: npm install && npm run build    # คำสั่งสำหรับติดตั้ง dependencies และ build
+    startCommand: "npm start"                 # คำสั่งสำหรับรันแอปหลังจาก build เสร็จ
+    plan: free
+    envVars:
+      - key: NODE_VERSION
+        value: 16.14.0
+    autoDeploy: true
