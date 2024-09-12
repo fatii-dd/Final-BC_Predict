@@ -15,7 +15,7 @@ app = FastAPI()
 
 origins = [
     "https://Final_BC_Predict-frontend.onrender.com",  # ใส่ URL ของ frontend app
-    "http://localhost:3000"  # สำหรับการทดสอบ local
+    # "http://localhost:3000"  # สำหรับการทดสอบ local
 ]
 
 
