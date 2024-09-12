@@ -22,7 +22,7 @@ origins = [
 # Allow CORS for frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # ควรระบุโดเมน frontend ของคุณแทน '*' เพื่อความปลอดภัย
+    allow_origins=origins,  # ควรระบุโดเมน frontend ของคุณแทน '*' เพื่อความปลอดภัย
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
